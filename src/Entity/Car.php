@@ -14,16 +14,16 @@ class Car
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $make = null;
+    private ?string $CarId = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $CarId = null;
+    private ?string $make = null;
 
     #[ORM\Column(length: 255)]
     private ?string $category = null;
 
-    #[ORM\Column]
-    private ?int $liceincePlate = null;
+    #[ORM\Column(length: 255)]
+    private ?string $liceincePlate = null;
 
     #[ORM\Column(length: 255)]
     private ?string $Availibility = null;
@@ -31,18 +31,6 @@ class Car
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getMake(): ?string
-    {
-        return $this->make;
-    }
-
-    public function setMake(string $make): static
-    {
-        $this->make = $make;
-
-        return $this;
     }
 
     public function getCarId(): ?string
@@ -53,6 +41,18 @@ class Car
     public function setCarId(string $CarId): static
     {
         $this->CarId = $CarId;
+
+        return $this;
+    }
+
+    public function getMake(): ?string
+    {
+        return $this->make;
+    }
+
+    public function setMake(string $make): static
+    {
+        $this->make = $make;
 
         return $this;
     }
@@ -69,12 +69,12 @@ class Car
         return $this;
     }
 
-    public function getLiceincePlate(): ?int
+    public function getLiceincePlate(): ?string
     {
         return $this->liceincePlate;
     }
 
-    public function setLiceincePlate(int $liceincePlate): static
+    public function setLiceincePlate(string $liceincePlate): static
     {
         $this->liceincePlate = $liceincePlate;
 

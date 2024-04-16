@@ -13,37 +13,67 @@ class Customer
     #[ORM\Column]
     private ?int $id = null;
 
-    #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    #[ORM\Column]
+    private ?int $customerId = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $email = null;
+    private ?string $FirstName = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $LastName = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Email = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getCustomerId(): ?int
     {
-        return $this->name;
+        return $this->customerId;
     }
 
-    public function setName(string $name): static
+    public function setCustomerId(int $customerId): static
     {
-        $this->name = $name;
+        $this->customerId = $customerId;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->FirstName;
+    }
+
+    public function setFirstName(string $FirstName): static
+    {
+        $this->FirstName = $FirstName;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->LastName;
+    }
+
+    public function setLastName(string $LastName): static
+    {
+        $this->LastName = $LastName;
 
         return $this;
     }
 
     public function getEmail(): ?string
     {
-        return $this->email;
+        return $this->Email;
     }
 
-    public function setEmail(string $email): static
+    public function setEmail(string $Email): static
     {
-        $this->email = $email;
+        $this->Email = $Email;
 
         return $this;
     }
